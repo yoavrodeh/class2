@@ -41,7 +41,7 @@
 
 
 ---
-@code[java code-max code-noblend](src/ScannerExample.java)
+@code[java  code-noblend](src/ScannerExample.java)
 @[1-11](`hasNext` will return true until all the original string is scanned. `next` will both return the current part of the string, and advance the inner "cursor" to the next one.)
 @[13-19](`hasNextInt` will be true if the next string can be read as an int. `nextInt` will convert it to an int.)
 @[21-25](This reads from the user.)
@@ -60,7 +60,7 @@
 
 
 ---
-@code[java code-max code-noblend](src/ScannerSimple.java)
+@code[java  code-noblend](src/ScannerSimple.java)
 @[1-10](Standard use case.)
 @[12-19](Why do we need `s.next()`?)
 
@@ -81,7 +81,7 @@ pretty similar to `printf` of C/C++.
 
 
 ---
-@code[java code-max code-noblend](src/Formater.java)
+@code[java  code-noblend](src/Formater.java)
 @[3-9](`System.out.format` replaces `System.out.print`.)
 @[11-13](`String.format` returns a new string.)
 
@@ -101,25 +101,26 @@ pretty similar to `printf` of C/C++.
 
 
 ---
-## Lists
+### Lists
 + A simple example of recursive data structures.
 + Nothing really new here technically, just good practice.
 
 
+
 ---
-@code[java code-max code-noblend](src/MainForList.java)
+@code[java  code-noblend](src/MainForList.java)
 This is what we want. How can we implement it?
 
 
 ---
-@code[java code-max code-noblend](src/Node.java)
+@code[java  code-noblend](src/Node.java)
 @[1-10](A `Node` holds a reference to a `Node`.)
 @[12-19](A recursive algorithm for a recursive data structure.) 
 
 
 
 ---
-@code[java code-max code-noblend](src/List.java)
+@code[java  code-noblend](src/List.java)
 @[1-12](A list just holds the first node.)
 @[14-19](How would you make this recursive?)
 
@@ -155,20 +156,20 @@ f(3, "abc");
 
 
 ---
-@code[java code-max code-noblend](src/MyMath.java)
+@code[java  code-noblend](src/MyMath.java)
 To use it from anywhere write `MyMath.pow(2,10)`.
 
 
 
 ---
-@code[java code-max code-noblend](src/Point.java)
+@code[java  code-noblend](src/Point.java)
 @[1-10](Using `String`'s static method `format`.)
 @[12-20](The static method does not have an `x` and `y` of its own.)
 @[22-24](The non-static method can use the static one.)
 
  
 ---
-@code[java code-max code-noblend](src/MainForPoint.java)
+@code[java  code-noblend](src/MainForPoint.java)
 The `dist` method is a good example for a static method. It naturally belongs to the class, though technically could have been placed anywhere else.
 
 
@@ -184,13 +185,13 @@ The `dist` method is a good example for a static method. It naturally belongs to
   
 
 ---
-@code[java code-max code-noblend](src/Static1.java)
+@code[java  code-noblend](src/Static1.java)
 Actually, `inc` and `getx` could have been declared `static`.
   
   
   
 ---
-@code[java code-max code-noblend](src/Student.java)
+@code[java  code-noblend](src/Student.java)
 @[1-12](`lastnum` increases every time a `Student` instance is created.)
 @[14-20](We can just put our `main` anywhere we like.)
 
@@ -206,14 +207,14 @@ Actually, `inc` and `getx` could have been declared `static`.
 
 
 ---
-@code[java code-max code-noblend](src/Singleton.java)
+@code[java  code-noblend](src/Singleton.java)
 
 What does this do??
 
 
 ---
 It is actually a known *design pattern* called 
-## Singleton
+### Singleton
 @quote[Ensure a class has only one instance and provide a global point of access to it.](Design Patterns, Elements of Reusable Object-Oriented Software)
 
 + Useful when you need a window manager class, a file system class, etc.
@@ -248,7 +249,7 @@ These work for any primitive or String array `arr`:
 
 
 ---
-## Question
+### Question
 Instead of having `List` and `Node`. We'll only have `Node` with a static field `head`. What is the problem with this idea?
 
 @css[fragment](This way, there could be only one list, because there is only one `head`.)
@@ -326,7 +327,7 @@ public class Woman {
 ---
 *If time permits...*
 
-## Exercise
+### Exercise
 
 Implement the singleton pattern with a twist. Instead of storing one instance, store two instances. 
 + In every even call of `getInstance()`, return the first instance.
@@ -338,6 +339,6 @@ Go back to the singleton slide and let them try.
 
 
 ---
-@code[java code-max code-noblend](src/Doubleton.java)
+@code[java  code-noblend](src/Doubleton.java)
 @[1-5](Why is even static?)
 @[7-18](Instances are not created unless needed (lazy initialization))
